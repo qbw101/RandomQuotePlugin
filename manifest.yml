@@ -8,3 +8,6 @@ author: qbw
 version: 1.0.0.0
 readme: README.md
 icon: icon.png
+repoOwner: qbw101
+repoName: RandomQuotePlugin
+assetsRoot: main/RandomQuotePlugin
