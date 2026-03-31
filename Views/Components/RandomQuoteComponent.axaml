@@ -1,0 +1,49 @@
+<ci:ComponentBase
+    x:Class="RandomQuotePlugin.Views.Components.RandomQuoteComponent"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ci="http://classisland.tech/schemas/xaml/core"
+    xmlns:local="clr-namespace:RandomQuotePlugin.Views.Components">
+
+    <!--
+        Avalonia 布局：横向排列引号图标 + 文字
+        使用 DynamicResource 适配 ClassIsland 主题色
+    -->
+    <StackPanel Orientation="Horizontal"
+                VerticalAlignment="Center"
+                Spacing="4">
+
+        <!-- 引号装饰 -->
+        <TextBlock Text="❝"
+                   FontSize="14"
+                   Opacity="0.5"
+                   VerticalAlignment="Center"
+                   Foreground="{DynamicResource MaterialDesignBody}"/>
+
+        <!-- 名言正文 -->
+        <TextBlock Name="ContentText"
+                   Text="{Binding content, RelativeSource={RelativeSource AncestorType=local:RandomQuoteComponent}}"
+                   FontSize="13"
+                   VerticalAlignment="Center"
+                   TextTrimming="CharacterEllipsis"
+                   MaxWidth="300"
+                   Foreground="{DynamicResource MaterialDesignBody}"/>
+
+        <!-- 分隔符（来源为空时隐藏） -->
+        <TextBlock Name="SeparatorText"
+                   Text=" —— "
+                   FontSize="12"
+                   Opacity="0.6"
+                   VerticalAlignment="Center"
+                   Foreground="{DynamicResource MaterialDesignBody}"/>
+
+        <!-- 来源（来源为空时隐藏） -->
+        <TextBlock Name="SourceText"
+                   Text="{Binding source, RelativeSource={RelativeSource AncestorType=local:RandomQuoteComponent}}"
+                   FontSize="12"
+                   Opacity="0.7"
+                   FontStyle="Italic"
+                   VerticalAlignment="Center"
+                   Foreground="{DynamicResource MaterialDesignBody}"/>
+    </StackPanel>
+</ci:ComponentBase>

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <!-- V2 不再限定 -windows，Avalonia 是跨平台的 -->
+        <EnableDynamicLoading>True</EnableDynamicLoading>
+        <RootNamespace>RandomQuotePlugin</RootNamespace>
+        <AssemblyName>RandomQuotePlugin</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- V2 SDK，ExcludeAssets=runtime 防止 SDK 依赖流入构建产物 -->
+        <PackageReference Include="ClassIsland.PluginSdk" Version="2.0.0.1">
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="manifest.yml">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+</Project>
